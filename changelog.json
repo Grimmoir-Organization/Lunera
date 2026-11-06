@@ -1,0 +1,33 @@
+{
+  "description": "Lunera 1.8.3: startup and UI transition performance changes.",
+  "image": "",
+  "changelog": [
+    {
+      "title": "Startup and navigation",
+      "items": [
+        "Startup intro follows elapsed display time without stretching missed frames",
+        "Inactive service creation waits until the intro finishes; active playback binds immediately",
+        "Short complete fades for tabs and settings pages",
+        "Glass capture reused during transition freezes while page content remains live"
+      ]
+    },
+    {
+      "title": "Player",
+      "items": [
+        "Compact solid five-action player menu",
+        "Duration timer with optional Finish the song after the timer",
+        "Standalone current-song-only mode removed",
+        "Close cancels delayed resume work and clears both playback decks"
+      ]
+    },
+    {
+      "title": "Performance",
+      "items": [
+        "Coalesced library and lyric rescans",
+        "Battery-aware six-hour background reconciliation",
+        "Transition polling sleeps while paused",
+        "Reuse unchanged queue metadata and reduce idle work"
+      ]
+    }
+  ]
+}

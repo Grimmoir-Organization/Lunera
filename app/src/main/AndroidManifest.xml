@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    
+    <uses-sdk tools:overrideLibrary="com.mocharealm.accompanist.lyrics.ui" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    
+
+    
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+
+    
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+    
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL" />
+        </intent>
+    </queries>
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:appCategory="audio"
+        android:banner="@drawable/lunera_logo"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/lunera_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/lunera_logo"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.Lunera"
+        tools:targetApi="tiramisu">
+        <provider android:name=".utils.TrackArtworkProvider" android:authorities="${applicationId}.artwork" android:exported="false" android:grantUriPermissions="true" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".ui.screens.CrashActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Lunera"
+            android:excludeFromRecents="true"
+            android:process=":crash" />
+
+        
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:theme="@style/Theme.Lunera.Starting" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout"
+            android:supportsPictureInPicture="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Lunera"
+            android:windowSoftInputMode="adjustResize">
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        
+        <activity-alias
+            android:name=".LauncherWhite"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherAzure"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherSky"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherTeal"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherSlate"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherSilver"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherPeriwinkle"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherViolet"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherMidnight"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherMauve"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherRose"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherCopper"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".LauncherRust"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/lunera_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/lunera_logo"
+            android:targetActivity=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <provider
+            android:name="com.dpi.DensityScaler"
+            android:authorities="${applicationId}.com.dpi.DensityScaler"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service
+            android:name=".playback.MusicService"
+            android:stopWithTask="false"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".playback.ExoDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="androidx.media3.exoplayer.downloadService.action.RESTART" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="androidx.media3.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+        
+        <receiver
+            android:name=".widget.MusicWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_music_player">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.grimmoir.lunera.widget.PLAY_PAUSE" />
+                <action android:name="org.grimmoir.lunera.widget.LIKE" />
+                <action android:name="org.grimmoir.lunera.widget.UPDATE_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_widget_info" />
+        </receiver>
+
+        
+        <activity
+            android:name=".widget.WidgetConfigActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.Lunera">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        
+        <receiver
+            android:name=".widget.NowPlayingWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_now_playing">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.grimmoir.lunera.widget.UPDATE_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/now_playing_widget_info" />
+        </receiver>
+
+        
+        <receiver
+            android:name=".widget.LyricsWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_lyrics">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.grimmoir.lunera.widget.UPDATE_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/lyrics_widget_info" />
+        </receiver>
+
+        
+        <receiver
+            android:name=".widget.TurntableWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_turntable">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.grimmoir.lunera.widget.TURNTABLE_PLAY_PAUSE" />
+                <action android:name="org.grimmoir.lunera.widget.TURNTABLE_LIKE" />
+                <action android:name="org.grimmoir.lunera.widget.UPDATE_TURNTABLE_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/turntable_widget_info" />
+        </receiver>
+
+        
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="org.grimmoir.lunera.cast.CastOptionsProvider" />
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/shortcut_search"
+        android:shortcutId="search"
+        android:shortcutShortLabel="@string/search">
+        <intent
+            android:action="org.grimmoir.lunera.action.SEARCH"
+            android:targetClass="org.grimmoir.lunera.MainActivity"
+            android:targetPackage="org.grimmoir.lunera" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/shortcut_library"
+        android:shortcutId="library"
+        android:shortcutShortLabel="@string/lunera_folders">
+        <intent
+            android:action="org.grimmoir.lunera.action.LIBRARY"
+            android:targetClass="org.grimmoir.lunera.MainActivity"
+            android:targetPackage="org.grimmoir.lunera" />
+    </shortcut>
+</shortcuts>

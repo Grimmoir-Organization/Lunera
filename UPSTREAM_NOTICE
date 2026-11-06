@@ -1,0 +1,6 @@
+Lunera — a Grimmoir Organization project.
+Based on Convx by Cosmic Taser and contributors, GPL-3.0.
+Source: https://github.com/cosmictaserdev-creator/Convx
+Base commit: 2d351f71c06a295e7758f227224784b9c2294108
+
+Modified for local-only library and playback, explicit folder permissions, narrowed settings and navigation, per-track artwork, playback dismissal, and Lunera branding. Original contributor notices, dependency licenses, and HIG credits remain applicable. The product name and icon are Lunera; legal attribution remains intentionally retained.
